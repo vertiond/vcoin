@@ -1,10 +1,10 @@
-# Bcoin Release Notes & Changelog
+# Vcoin Release Notes & Changelog
 
 ## v1.0.0-beta.14
 
 ### Notable Changes
 
-- __pkg__ - Ignored `bcoin*` files in npmignore have been removed. This fixes
+- __pkg__ - Ignored `vcoin*` files in npmignore have been removed. This fixes
   the npm install.
 
 ## v1.0.0-beta.13
@@ -26,7 +26,7 @@
   parameters as the `getblock` call, requiring a height instead of block hash
   (12d3ee6f9582afa9a3ba8984c63dcbc27b8db57e).
 
-- __bin__ - `bcoin --version` and `bcoin --help` now exit with appropriate
+- __bin__ - `vcoin --version` and `vcoin --help` now exit with appropriate
   messages (f2f94a800e37c5dbdda6920fa6b85fbd485c212a).
 
 - __net__ - The p2p pool now exposes an `--only` option
@@ -89,7 +89,7 @@
   `segwit` and `segsignal` rules will be automatically added when calling
   `getblocktemplate`. To enable bip91 on an existing database `--force-flags`
   must be passed. This will force bip91 to be enforced, but will not invalidate
-  any previous blocks (`bcoin cli reset [height]` may need to be used).
+  any previous blocks (`vcoin cli reset [height]` may need to be used).
 
 - __chain__ - BIP148 support is now exposed via the `--bip148` option. This
   likewise must be enabled with `--force-flags` on existing chains. This has
@@ -99,10 +99,10 @@
 
 This release contains a few non-backward-compatible changes.
 
-Bcoin now requires node.js >=7.6.0 due to the use of ES6/7 features, and for
+Vcoin now requires node.js >=7.6.0 due to the use of ES6/7 features, and for
 the sake of more stability.
 
-Bcoin's rest API now assumes satoshi values for in all JSON serialization.
+Vcoin's rest API now assumes satoshi values for in all JSON serialization.
 __This is a breaking change__ for code that is not aware of it. All code which
 hits the rest API must be updated to use only satoshi values as opposed to BTC
 strings.

@@ -5,7 +5,7 @@ const FullNode = bcoin.fullnode;
 
 const node = new FullNode({
   network: 'main',
-  dbname: 'bcoin',
+  dbname: 'vcoin',
   dbhost: 'localhost',
   checkpoints: true,
   workers: true,

@@ -1,15 +1,15 @@
-# Bcoin
+# Vcoin (Bcoin ported to Vertcoin)
 
-__NOTE__: The latest release of bcoin contains a non-backward compatible change
+__NOTE__: The latest release of vcoin contains a non-backward compatible change
 to the rest API. Please read the [changelog]'s "migrating" section for more
 details.
 
 ---
 
-**Bcoin** is an alternative implementation of the bitcoin protocol, written in
+**Vcoin** is an alternative implementation of the vertcoin protocol, written in
 node.js.
 
-Although still in a beta state, bcoin is well tested and aware of all known
+Although still in a beta state, vcoin is well tested and aware of all known
 consensus rules. It is currently used in production as the consensus backend
 and wallet system for [purse.io][purse].
 
@@ -27,10 +27,10 @@ Try it in the browser: http://bcoin.io/browser.html
 ## Install
 
 ```
-$ git clone git://github.com/bcoin-org/bcoin.git
-$ cd bcoin
+$ git clone git://github.com/Cubey2019/vcoin.git
+$ cd vcoin
 $ npm install
-$ ./bin/bcoin
+$ ./bin/vcoin
 ```
 
 See the [Beginner's Guide][guide] for more in-depth installation instructions.
@@ -47,7 +47,7 @@ Join us on [freenode][freenode] in the [#bcoin][irc] channel.
 
 ## Disclaimer
 
-Bcoin does not guarantee you against theft or lost funds due to bugs, mishaps,
+Vcoin does not guarantee you against theft or lost funds due to bugs, mishaps,
 or your own incompetence. You and you alone are responsible for securing your
 money.
 
@@ -65,7 +65,7 @@ all code is your original work. `</legalese>`
 See LICENSE for more info.
 
 [purse]: https://purse.io
-[guide]: https://github.com/bcoin-org/bcoin/blob/master/docs/Beginner's-Guide.md
+[guide]: https://github.com/Cubey2019/vcoin/blob/master/docs/Beginner's-Guide.md
 [freenode]: https://freenode.net/
 [irc]: irc://irc.freenode.net/bcoin
-[changelog]: https://github.com/bcoin-org/bcoin/blob/master/CHANGELOG.md
+[changelog]: https://github.com/Cubey2019/vcoin/blob/master/CHANGELOG.md

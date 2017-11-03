@@ -1,12 +1,12 @@
 {
-  "name": "bcoin",
+  "name": "vcoin",
   "version": "1.0.0-beta.15",
-  "description": "Bitcoin bike-shed",
+  "description": "Vertcoin bike-shed",
   "license": "MIT",
-  "repository": "git://github.com/bcoin-org/bcoin.git",
-  "homepage": "https://github.com/bcoin-org/bcoin",
+  "repository": "git://github.com/Cubey2019/vcoin.git",
+  "homepage": "https://github.com/Cubey2019/vcoin",
   "bugs": {
-    "url": "https://github.com/bcoin-org/bcoin/issues"
+    "url": "https://github.com/Cubey2019/vcoin/issues"
   },
   "author": "Fedor Indutny <fedor@indutny.com>",
   "contributors": [
@@ -14,8 +14,8 @@
     "Alex Sherbuck <alex@bitpay.com>"
   ],
   "keywords": [
-    "bcoin",
-    "bitcoin",
+    "vcoin",
+    "vertcoin",
     "blockchain",
     "cryptocurrency",
     "wallet"
@@ -30,7 +30,7 @@
     "n64": "0.0.18"
   },
   "optionalDependencies": {
-    "bcoin-native": "0.0.23",
+    "vcoin-native": "0.0.23",
     "leveldown": "1.7.2",
     "secp256k1": "3.3.0",
     "socket.io": "2.0.3",
@@ -53,12 +53,12 @@
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
     "webpack": "^3.5.4"
   },
-  "main": "./lib/bcoin.js",
+  "main": "./lib/vcoin.js",
   "bin": {
-    "bcoin": "./bin/bcoin",
-    "bcoin-cli": "./bin/cli",
-    "bcoin-node": "./bin/node",
-    "bcoin-spvnode": "./bin/spvnode"
+    "vcoin": "./bin/vcoin",
+    "vcoin-cli": "./bin/cli",
+    "vcoin-node": "./bin/node",
+    "vcoin-spvnode": "./bin/spvnode"
   },
   "scripts": {
     "clean": "rm -f {browser/,}{bcoin.js,bcoin-worker.js}",

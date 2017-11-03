@@ -9,7 +9,7 @@ This release removes the leveldb key:val blockchain api and replaces it with a 1
  * Mongoose ODM
  * Removed 'db' configuration option.
  * Added 'dbname' &  'dbhost' configuration options.
- 	* Specify a mongodb instance and location. Default 'bcoin', 'localhost'.
+ 	* Specify a mongodb instance and location. Default 'vcoin', 'localhost'.
  * Transactions and Addresses index by default
  * Schema Support for Bcoin primitives:
    * Address
@@ -31,7 +31,7 @@ const FullNode = bcoin.fullnode;
 
 const node = new FullNode({
   network: 'main',
-  dbname: 'bcoin',
+  dbname: 'vcoin',
   dbhost: 'localhost',
   checkpoints: true,
   workers: true,

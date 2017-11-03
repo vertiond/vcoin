@@ -9,8 +9,8 @@ const env = process.env;
 module.exports = {
   target: 'web',
   entry: {
-    'bcoin': './lib/bcoin-browser',
-    'bcoin-worker': './lib/workers/worker'
+    'vcoin': './lib/vcoin-browser',
+    'vcoin-worker': './lib/workers/worker'
   },
   output: {
     path: path.join(__dirname, 'browser'),
@@ -22,10 +22,10 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.BCOIN_NETWORK':
-        str(env.BCOIN_NETWORK || 'main'),
-      'process.env.BCOIN_WORKER_FILE':
-        str(env.BCOIN_WORKER_FILE || '/bcoin-worker.js')
+      'process.env.VCOIN_NETWORK':
+        str(env.VCOIN_NETWORK || 'main'),
+      'process.env.VCOIN_WORKER_FILE':
+        str(env.VCOIN_WORKER_FILE || '/vcoin-worker.js')
     }),
     new UglifyJsPlugin({
       compress: {
