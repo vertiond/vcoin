@@ -18,10 +18,6 @@ function createGenesisBlock(options) {
       'ascii');
   }
 
-  if (!key) {
-    key = Buffer.from('', 'hex');
-  }
-
   if (!reward)
     reward = 50 * consensus.COIN;
 
@@ -34,14 +30,14 @@ function createGenesisBlock(options) {
       },
       script: Script()
         .pushInt(0)
-        .pushPush(Buffer.from([4]))
+        .pushPush(Buffer.from([0xe7, 0x03]))
         .pushData(flags)
         .compile(),
       sequence: 0xffffffff
     }],
     outputs: [{
       value: reward,
-      script: Script.fromPubkey(key)
+      script: key ? Script.fromPubkey(key) : new Script()
     }],
     locktime: 0
   });
@@ -89,12 +85,15 @@ util.log('');
 util.log(regtest);
 util.log('');
 util.log('');
-util.log('main hash: %s', main.rhash());
+util.log('main hash: %s', main.hash('hex'));
+util.log('main merkle: %s', main.merkleRoot);
 util.log('main raw: %s', main.toRaw().toString('hex'));
 util.log('');
-util.log('testnet hash: %s', testnet.rhash());
+util.log('testnet hash: %s', testnet.hash('hex'));
+util.log('testnet merkle: %s', testnet.merkleRoot);
 util.log('testnet raw: %s', testnet.toRaw().toString('hex'));
 util.log('');
-util.log('regtest hash: %s', regtest.rhash());
+util.log('regtest hash: %s', regtest.hash('hex'));
+util.log('regtest merkle: %s', regtest.merkleRoot);
 util.log('regtest raw: %s', regtest.toRaw().toString('hex'));
 util.log('');
