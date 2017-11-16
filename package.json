@@ -28,7 +28,8 @@
     "elliptic": "6.4.0",
     "mongoose": "^4.11.9",
     "n64": "0.0.18",
-    "vertcoinhash": "=1.0.0"
+    "vertcoinhash": "=1.0.0",
+    "vcoin-mongo-models": "https://github.com/Cubey2019/vcoin-mongo-models"
   },
   "optionalDependencies": {
     "bcoin-native": "0.0.23",
