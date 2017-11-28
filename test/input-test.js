@@ -55,7 +55,7 @@ describe('Input', function() {
     const prevout = input.prevout.toRaw();
 
     assert.strictEqual(type, 'pubkeyhash');
-    assert.strictEqual(addr, '1PM9ZgAV8Z4df1md2zRTF98tPjzTAfk2a6');
+    assert.strictEqual(addr, 'VxLyUPKwYMxqinfmmn55g3Tk5ZHRcKVdcu');
     assert.strictEqual(input.isCoinbase(), false);
 
     assert.strictEqual(input.isFinal(), true);

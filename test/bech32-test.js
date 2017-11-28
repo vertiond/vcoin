@@ -42,14 +42,14 @@ const validChecksums = [
 
 const validAddresses = [
   [
-    'BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4',
+    'VTC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4',
     Buffer.from([
       0x00, 0x14, 0x75, 0x1e, 0x76, 0xe8, 0x19, 0x91, 0x96, 0xd4, 0x54,
       0x94, 0x1c, 0x45, 0xd1, 0xb3, 0xa3, 0x23, 0xf1, 0x43, 0x3b, 0xd6
     ])
   ],
   [
-    'tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7',
+    'tvtc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7',
     Buffer.from([
       0x00, 0x20, 0x18, 0x63, 0x14, 0x3c, 0x14, 0xc5, 0x16, 0x68, 0x04,
       0xbd, 0x19, 0x20, 0x33, 0x56, 0xda, 0x13, 0x6c, 0x98, 0x56, 0x78,
@@ -58,7 +58,7 @@ const validAddresses = [
     ])
   ],
   [
-    'bc1pw508d6qejxtdg4y5r3zarvary0c5xw7kw50'
+    'vtc1pw508d6qejxtdg4y5r3zarvary0c5xw7kw50'
     + '8d6qejxtdg4y5r3zarvary0c5xw7k7grplx',
     Buffer.from([
       0x81, 0x28, 0x75, 0x1e, 0x76, 0xe8, 0x19, 0x91, 0x96, 0xd4, 0x54,
@@ -68,20 +68,20 @@ const validAddresses = [
     ])
   ],
   [
-    'BC1SW50QA3JX3S',
+    'VTC1SW50QA3JX3S',
     Buffer.from([
       0x90, 0x02, 0x75, 0x1e
     ])
   ],
   [
-    'bc1zw508d6qejxtdg4y5r3zarvaryvg6kdaj',
+    'vtc1zw508d6qejxtdg4y5r3zarvaryvg6kdaj',
     Buffer.from([
       0x82, 0x10, 0x75, 0x1e, 0x76, 0xe8, 0x19, 0x91, 0x96, 0xd4, 0x54,
       0x94, 0x1c, 0x45, 0xd1, 0xb3, 0xa3, 0x23
     ])
   ],
   [
-    'tb1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy',
+    'tvtc1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy',
     Buffer.from([
       0x00, 0x20, 0x00, 0x00, 0x00, 0xc4, 0xa5, 0xca, 0xd4, 0x62, 0x21,
       0xb2, 0xa1, 0x87, 0x90, 0x5e, 0x52, 0x66, 0x36, 0x2b, 0x99, 0xd5,
@@ -92,16 +92,16 @@ const validAddresses = [
 ];
 
 const invalidAddresses = [
-  'tc1qw508d6qejxtdg4y5r3zarvary0c5xw7kg3g4ty',
-  'bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5',
-  'BC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2',
-  'bc1rw5uspcuh',
-  'bc10w508d6qejxtdg4y5r3zarvary0c5xw7kw508d'
+  'tvtc1qw508d6qejxtdg4y5r3zarvary0c5xw7kg3g4ty',
+  'vtc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5',
+  'VTC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2',
+  'vtc1rw5uspcuh',
+  'vtc10w508d6qejxtdg4y5r3zarvary0c5xw7kw508d'
   + '6qejxtdg4y5r3zarvary0c5xw7kw5rljs90',
-  'BC1QR508D6QEJXTDG4Y5R3ZARVARYV98GJ9P',
-  'tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sL5k7',
-  'tb1pw508d6qejxtdg4y5r3zarqfsj6c3',
-  'tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3pjxtptv'
+  'VTC1QR508D6QEJXTDG4Y5R3ZARVARYV98GJ9P',
+  'tvtc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sL5k7',
+  'tvtc1pw508d6qejxtdg4y5r3zarqfsj6c3',
+  'tvtc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3pjxtptv'
 ];
 
 function fromAddress(hrp, addr) {
@@ -144,7 +144,7 @@ describe('Bech32', function() {
 
   for (const [addr, script] of validAddresses) {
     it(`should have valid address for ${addr}`, () => {
-      let hrp = 'bc';
+      let hrp = 'vtc';
       let ret = null;
 
       try {
@@ -154,7 +154,7 @@ describe('Bech32', function() {
       }
 
       if (ret === null) {
-        hrp = 'tb';
+        hrp = 'tvtc';
         try {
           ret = fromAddress(hrp, addr);
         } catch (e) {
@@ -174,8 +174,8 @@ describe('Bech32', function() {
 
   for (const addr of invalidAddresses) {
     it(`should have invalid address for ${addr}`, () => {
-      assert.throws(() => fromAddress('bc', addr));
-      assert.throws(() => fromAddress('tb', addr));
+      assert.throws(() => fromAddress('vtc', addr));
+      assert.throws(() => fromAddress('tvtc', addr));
     });
   }
 

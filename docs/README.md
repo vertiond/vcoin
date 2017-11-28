@@ -1,4 +1,4 @@
-Welcome to the bcoin docs!
+Welcome to the vcoin docs!
 
 ## Getting Started
 - [Getting Started][getting-started]
@@ -8,7 +8,7 @@ Welcome to the bcoin docs!
 - [Guides][guides]
 
 ## Running
-- [Bcoin CLI][cli]
+- [Vcoin CLI][cli]
 - [Running in the Browser][browser]
 - [REST and RPC API][rest-rpc]
 

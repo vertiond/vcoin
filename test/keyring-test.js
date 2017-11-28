@@ -22,7 +22,7 @@ describe('KeyRing', function() {
 
   it('should get uncompressed public key address', () => {
     assert.strictEqual(
-      '1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN',
+      'VrZmfSv6zcTsXDUTh1aj1E5pVsNZEX5giL',
       uncompressed.getKeyAddress('base58'));
   });
 
@@ -40,7 +40,7 @@ describe('KeyRing', function() {
 
   it('should get compressed public key address', () => {
     assert.strictEqual(
-      '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV',
+      'Vp3h5UG2JkENYZdGMpnShAHk4riTjSTXCB',
       compressed.getKeyAddress('base58'));
   });
 

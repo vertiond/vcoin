@@ -1,4 +1,4 @@
-Bcoin ships with bcoin-cli as its default HTTP client for command line access.
+Vcoin ships with vcoin-cli as its default HTTP client for command line access.
 
 ## Configuration
 
@@ -8,16 +8,16 @@ Examples:
 $ export BCOIN_API_KEY=hunter2
 $ export BCOIN_NETWORK=main
 $ export BCOIN_URI=http://localhost:8332
-$ bcoin cli info
+$ vcoin cli info
 ```
 
 ``` bash
-$ bcoin cli info --api-key=hunter2 --uri=http://localhost
+$ vcoin cli info --api-key=hunter2 --uri=http://localhost
 ```
 
 ``` bash
 $ echo 'api-key: hunter2' > ~/cli.conf
-$ bcoin cli info --config=~/cli.conf
+$ vcoin cli info --config=~/cli.conf
 ```
 
 ## Examples
@@ -26,47 +26,47 @@ $ bcoin cli info --config=~/cli.conf
 $ export BCOIN_API_KEY=your-api-key
 
 # View the genesis block
-$ bcoin cli block 0
+$ vcoin cli block 0
 
 # View the mempool
-$ bcoin cli mempool
+$ vcoin cli mempool
 
 # View primary wallet
-$ bcoin wallet get
+$ vcoin wallet get
 
 # View transaction history
-$ bcoin wallet history
+$ vcoin wallet history
 
 # Send a transaction
-$ bcoin wallet send [address] 0.01
+$ vcoin wallet send [address] 0.01
 
 # View balance
-$ bcoin wallet balance
+$ vcoin wallet balance
 
 # Derive new address
-$ bcoin wallet address
+$ vcoin wallet address
 
 # Create a new account
-$ bcoin wallet account create foo
+$ vcoin wallet account create foo
 
 # Send from account
-$ bcoin wallet send [address] 0.01 --account=foo
+$ vcoin wallet send [address] 0.01 --account=foo
 ```
 
 RPC examples:
 
 ``` bash
-$ bcoin rpc getblockchaininfo
-$ bcoin rpc getwalletinfo
-$ bcoin rpc getpeerinfo
-$ bcoin rpc getbalance
-$ bcoin rpc listtransactions
-$ bcoin rpc sendtoaddress [address] 0.01
+$ vcoin rpc getblockchaininfo
+$ vcoin rpc getwalletinfo
+$ vcoin rpc getpeerinfo
+$ vcoin rpc getbalance
+$ vcoin rpc listtransactions
+$ vcoin rpc sendtoaddress [address] 0.01
 ```
 
 ## Commands
 
-bcoin-cli commands are split into 3 categories: cli, rpc, and wallet.
+vcoin-cli commands are split into 3 categories: cli, rpc, and wallet.
 
 ### Top-level Commands
 
@@ -121,7 +121,7 @@ bcoin-cli commands are split into 3 categories: cli, rpc, and wallet.
 
 ### RPC Commands
 
-Bcoin implements nearly all bitcoind calls along with some custom calls.
+Vcoin implements nearly all vertcoind calls along with some custom calls.
 
 - `stop`
 - `help`

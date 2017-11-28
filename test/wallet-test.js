@@ -33,6 +33,7 @@ const workers = new WorkerPool({
 const wdb = new WalletDB({
   db: 'memory',
   verify: true,
+  witness: false,
   workers
 });
 
@@ -251,12 +252,12 @@ describe('Wallet', function() {
   });
 
   it('should validate existing address', () => {
-    assert(Address.fromString('1KQ1wMNwXHUYj1nV2xzsRcKUH8gVFpTFUc'));
+    assert(Address.fromString('VwNFdsnxeimcU8WDsVeW91swiTZVbvGkuy'));
   });
 
   it('should fail to validate invalid address', () => {
     assert.throws(() => {
-      Address.fromString('1KQ1wMNwXHUYj1nv2xzsRcKUH8gVFpTFUc');
+      Address.fromString('VwNFdsnxeimcU8WDsveW91swiTZVbvGkuy');
     });
   });
 

@@ -1,10 +1,10 @@
-Because bcoin is written in node.js, it is capable of being browserified.
+Because vcoin is written in node.js, it is capable of being browserified.
 
 ## Running a full node in the browser
 
 ``` bash
-$ cd ~/bcoin
-$ make # Browserify bcoin
+$ cd ~/vcoin
+$ make # Browserify vcoin
 $ node browser/server.js 8080 # Start up a simple webserver and websocket->tcp bridge
 $ chromium http://localhost:8080
 ```

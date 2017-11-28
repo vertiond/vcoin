@@ -19,6 +19,7 @@ const node = new FullNode({
   network: 'regtest',
   apiKey: 'foo',
   walletAuth: true,
+  walletWitness: false,
   db: 'memory',
   workers: true,
   plugins: [require('../lib/wallet/plugin')]
@@ -198,7 +199,7 @@ describe('HTTP', function() {
       vbrequired: 0,
       height: 1,
       previousblockhash:
-        '0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206',
+        '2399c0b047ebbbd1650d66867206c97317027b1a1932bc6fc17ce833dc4a85ce',
       target:
         '7fffff0000000000000000000000000000000000000000000000000000000000',
       bits: '207fffff',
@@ -210,7 +211,7 @@ describe('HTTP', function() {
       sigoplimit: 20000,
       sizelimit: 1000000,
       longpollid:
-        '0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206'
+        '2399c0b047ebbbd1650d66867206c97317027b1a1932bc6fc17ce833dc4a85ce'
         + '0000000000',
       submitold: false,
       coinbaseaux: { flags: '6d696e65642062792062636f696e' },

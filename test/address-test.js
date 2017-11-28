@@ -9,18 +9,18 @@ const assert = require('./util/assert');
 
 describe('Address', function() {
   it('should match mainnet p2pkh address', () => {
-    const raw = 'e34cce70c86373273efcc54ce7d2a491bb4a0e84';
+    const raw = 'ea68048920290987e56e9afe25cedfa8a6f57803';
     const p2pkh = Buffer.from(raw, 'hex');
     const addr = Address.fromPubkeyhash(p2pkh);
-    const expectedAddr = '1MirQ9bwyQcGVJPwKUgapu5ouK2E2Ey4gX';
+    const expectedAddr = 'VwNFdsnxeimcU8WDsVeW91swiTZVbvGkuy';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
   it('should match mainnet p2pkh address 2', () => {
-    const raw = '0ef030107fd26e0b6bf40512bca2ceb1dd80adaa';
+    const raw = '4234213c9551d7627a67922ef77dafbd0bd5cc39';
     const p2pkh = Buffer.from(raw, 'hex');
     const addr = Address.fromPubkeyhash(p2pkh);
-    const expectedAddr = '12MzCDwodF9G1e7jfwLXfR164RNtx4BRVG';
+    const expectedAddr = 'Vg2sxR3t2dTMPHFmhHzNAg1HvDGvKbHxsg';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
@@ -33,7 +33,7 @@ describe('Address', function() {
   });
 
   it('should handle wrong p2pkh hash length', () => {
-    const raw = '000ef030107fd26e0b6bf40512bca2ceb1dd80adaa';
+    const raw = '004234213c9551d7627a67922ef77dafbd0bd5cc39';
     const p2pkh = Buffer.from(raw, 'hex');
     assert.throws(() => Address.fromPubkeyhash(p2pkh));
   });
@@ -46,35 +46,26 @@ describe('Address', function() {
 
   it('should match mainnet p2sh address obtained from script', () => {
     const p2sh = Buffer.from(''
-                          + '52410491bba2510912a5bd37da1fb5b1673010e4'
-                          + '3d2c6d812c514e91bfa9f2eb129e1c183329db55'
-                          + 'bd868e209aac2fbc02cb33d98fe74bf23f0c235d'
-                          + '6126b1d8334f864104865c40293a680cb9c020e7'
-                          + 'b1e106d8c1916d3cef99aa431a56d253e69256da'
-                          + 'c09ef122b1a986818a7cb624532f062c1d1f8722'
-                          + '084861c5c3291ccffef4ec687441048d2455d240'
-                          + '3e08708fc1f556002f1b6cd83f992d085097f997'
-                          + '4ab08a28838f07896fbab08f39495e15fa6fad6e'
-                          + 'dbfb1e754e35fa1c7844c41f322a1863d4621353ae','hex');
+                          + '3045022100be28575ec43363f58378bdb58c464550e352fbd659154a0323cc34a14c9a7b9902204135458b808c223dca04eae223e1ecd8c8b17d3b0ac1f6af2ce85a9712c740a3','hex');
     const script = Script.fromRaw(p2sh);
     const addr = Address.fromScript(script);
-    const expectedAddr = '3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC';
+    const expectedAddr = 'VwhEmt57k9djWo4XEJLDPCdUQWDHP5WhGN';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
   it('should match mainnet p2sh address obtained from script hash', () => {
-    const raw = 'f815b036d9bbbce5e9f2a00abd1bf3dc91e95510';
+    const raw = 'a4d06f49aba23fad4f9f26c9378dc20c22c3532b';
     const p2sh = Buffer.from(raw, 'hex');
     const addr = Address.fromScripthash(p2sh);
-    const expectedAddr = '3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC';
+    const expectedAddr = '3GiUSJUHk9u7L9Q4Ge1ArQLGQ9Rp1xp8Ff';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
   it('should match mainnet p2sh address obtained from script 2', () => {
-    const raw = 'e8c300c87986efa84c37c0519929019ef86eb5b4';
+    const raw = '41f9da53aa1cf0f6bae550a5322796ffe5ca7449';
     const p2sh = Buffer.from(raw, 'hex');
     const addr = Address.fromScripthash(p2sh);
-    const expectedAddr = '3NukJ6fYZJ5Kk8bPjycAnruZkE5Q7UW7i8';
+    const expectedAddr = '37hsA6JsTqauouaxBJoJMpdP8MmF6HYcwJ';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
@@ -90,7 +81,7 @@ describe('Address', function() {
     const raw = '751e76e8199196d454941c45d1b3a323f1433bd6';
     const p2wpkh = Buffer.from(raw, 'hex');
     const addr = Address.fromWitnessPubkeyhash(p2wpkh);
-    const expectedAddr = 'bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4';
+    const expectedAddr = 'vtc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
@@ -102,14 +93,14 @@ describe('Address', function() {
                         + 'b8c6329604903262', 'hex');
     const addr = Address.fromWitnessScripthash(p2wpkh);
     assert.strictEqual(addr.toString(),
-        'bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3');
+        'vtc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3');
   });
 
   it('should match testnet segwit p2wpkh v0 address', () => {
     const raw = '751e76e8199196d454941c45d1b3a323f1433bd6';
     const p2wpkh = Buffer.from(raw, 'hex');
     const addr = Address.fromWitnessPubkeyhash(p2wpkh, 'testnet');
-    const expectedAddr = 'tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx';
+    const expectedAddr = 'tvtc1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx';
     assert.strictEqual(addr.toString(), expectedAddr);
   });
 
@@ -121,7 +112,7 @@ describe('Address', function() {
                         + 'b8c6329604903262', 'hex');
     const addr = Address.fromWitnessScripthash(p2wpkh, 'testnet');
     assert.strictEqual(addr.toString(),
-        'tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7');
+        'tvtc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7');
   });
 
   it('should match testnet segwit p2pwsh v0 address 2', () => {
@@ -132,7 +123,7 @@ describe('Address', function() {
                         + '4d165dab93e86433', 'hex');
     const addr = Address.fromWitnessScripthash(p2wpkh, 'testnet');
     assert.strictEqual(addr.toString(),
-        'tb1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy');
+        'tvtc1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy');
   });
 
   it('should handle invalid segwit hrp', () => {
@@ -141,44 +132,44 @@ describe('Address', function() {
   });
 
   it('should handle invalid segwit checksum', () => {
-    const addr = 'bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5';
+    const addr = 'vtc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle invalid segwit version', () => {
-    const addr = 'BC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2';
+    const addr = 'VTC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle invalid segwit program length', () => {
-    const addr = 'bc1rw5uspcuh';
+    const addr = 'vtc1rw5uspcuh';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle invalid segwit program length 2', () => {
-    const addr = 'bc10w508d6qejxtdg4y5r3zarvary0c5xw7kw5'
+    const addr = 'vtc10w508d6qejxtdg4y5r3zarvary0c5xw7kw5'
                + '08d6qejxtdg4y5r3zarvary0c5xw7kw5rljs90';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle invalid segwit program length for witness v0', () => {
-    const addr = 'tb1pw508d6qejxtdg4y5r3zarqfsj6c3';
+    const addr = 'tvtc1pw508d6qejxtdg4y5r3zarqfsj6c3';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle segwit mixed case', () => {
-    const addr = 'tb1qrp33g0q5c5txsp9arysrx4k6z'
+    const addr = 'tvtc1qrp33g0q5c5txsp9arysrx4k6z'
                + 'dkfs4nce4xj0gdcccefvpysxf3q0sL5k7';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle segwit zero padding of more than 4 bits', () => {
-    const addr = 'tb1pw508d6qejxtdg4y5r3zarqfsj6c3';
+    const addr = 'tvtc1pw508d6qejxtdg4y5r3zarqfsj6c3';
     assert.throws(() => Address.fromString(addr));
   });
 
   it('should handle segwit non-zero padding in 8-to-5 conversion', () => {
-    const addr = 'tb1qrp33g0q5c5txsp9arysrx4k6'
+    const addr = 'tvtc1qrp33g0q5c5txsp9arysrx4k6'
                + 'zdkfs4nce4xj0gdcccefvpysxf3pjxtptv';
     assert.throws(() => Address.fromString(addr));
   });
