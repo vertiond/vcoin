@@ -214,7 +214,7 @@ describe('HTTP', function() {
         '2399c0b047ebbbd1650d66867206c97317027b1a1932bc6fc17ce833dc4a85ce'
         + '0000000000',
       submitold: false,
-      coinbaseaux: { flags: '6d696e65642062792062636f696e' },
+      coinbaseaux: { flags: '6d696e65642062792076636f696e' },
       coinbasevalue: 5000000000,
       transactions: []
     });

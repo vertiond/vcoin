@@ -501,7 +501,7 @@ describe('Node', function() {
         weightlimit: 4000000,
         longpollid: node.chain.tip.rhash() + '0000000000',
         submitold: false,
-        coinbaseaux: { flags: '6d696e65642062792062636f696e' },
+        coinbaseaux: { flags: '6d696e65642062792076636f696e' },
         coinbasevalue: 1250000000,
         coinbasetxn: undefined,
         default_witness_commitment:
