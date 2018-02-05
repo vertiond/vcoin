@@ -8,6 +8,7 @@ const util = require('../lib/utils/util');
 const BufferReader = require('../lib/utils/reader');
 const assert = require('./util/assert');
 const common = require('./util/common');
+const Network = require('../lib/protocol/network');
 
 // Take input rawbytes from the raw data format
 // p2pkh
@@ -21,6 +22,9 @@ const input2 = tx2.getRaw().slice(152, 339);
 // p2sh multisig
 const tx3 = common.readTX('tx4');
 const input3 = tx3.getRaw().slice(5, 266);
+
+// p2wpkh
+const tx4 = common.readTX('tx039b9e06eab68614123e24e130c610ea12846b5a427d0d063d3c7c1d60fb1d52');
 
 const bip69tests = require('./data/bip69');
 
@@ -118,7 +122,31 @@ describe('Input', function() {
     assert.bufferEqual(redeem, rawredeem);
   });
 
-  // it('should parse p2wpkh')
+  it('should parse p2wpkh', () => {
+    const network = Network.get('testnet');
+    const [tx] = tx4.getTX();
+    const input = tx.inputs[0];
+    const type = input.getType();
+    const addr = input.getAddress().toString(network);
+    assert.equal(type, 'witnesspubkeyhash');
+    assert.equal(addr, 'tvtc1q8nv500866vx8tgtklqef4q6spg7v756ew52wdc');
+    assert.strictEqual(input.isCoinbase(), false);
+    assert.strictEqual(input.isFinal(), false);
+    assert.strictEqual(input.isRBF(), false);
+  });
+
+  it('should parse p2wsh', () => {
+    const network = Network.get('testnet');
+    const [tx] = tx4.getTX();
+    const input = tx.inputs[1];
+    const type = input.getType();
+    const addr = input.getAddress().toString(network);
+    assert.equal(type, 'witnesspubkeyhash');
+    assert.equal(addr, '2NAmWJTeafZoVdxGzzrjuyDkSj8D18bdyUh');
+    assert.strictEqual(input.isCoinbase(), false);
+    assert.strictEqual(input.isFinal(), false);
+    assert.strictEqual(input.isRBF(), false);
+  });
 
   it('should parse coinbase input', () => {
     const rawprevout = Buffer.from('' +
