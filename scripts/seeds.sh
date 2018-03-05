@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=$(dirname "$(which "$0")")
-url_main='https://raw.githubusercontent.com/vertcoin/vertcoin/master/contrib/seeds/nodes_main.txt'
+url_main='https://raw.githubusercontent.com/vertcoin-project/vertcoin-core/master/contrib/seeds/nodes_main.txt'
 
 getseeds() {
   echo "$(curl -s "$1")"

@@ -95,4 +95,4 @@ Note that certain chain options affect the format and indexing of the chain data
 
 ## Sample Config File
 
-See https://github.com/Cubey2019/vcoin/blob/master/etc/sample.conf.
+See https://github.com/vertcoin-project/vcoin/blob/master/etc/sample.conf.

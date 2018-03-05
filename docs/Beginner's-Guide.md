@@ -22,14 +22,14 @@ Vcoin is meant to be installed via npm, but for the security conscious, it may b
 ### Installing via NPM
 
 ``` bash
-$ npm install -g vcoin --production
+$ npm install -g vertcoin-project/vcoin --production
 ```
 
 ### Installing via Git
 
 ``` bash
 $ curl https://keybase.io/chjj/pgp_keys.asc | gpg --import
-$ git clone git://github.com/Cubey2019/vcoin.git
+$ git clone git://github.com/vertcoin-project/vcoin.git
 $ cd vcoin
 $ git tag
 ...

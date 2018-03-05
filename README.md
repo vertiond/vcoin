@@ -27,7 +27,7 @@ Try it in the browser: http://bcoin.io/browser.html
 ## Install
 
 ```
-$ git clone git://github.com/Cubey2019/vcoin.git
+$ git clone git://github.com/vertcoin-project/vcoin.git
 $ cd vcoin
 $ npm install
 $ ./bin/vcoin
@@ -65,7 +65,7 @@ all code is your original work. `</legalese>`
 See LICENSE for more info.
 
 [purse]: https://purse.io
-[guide]: https://github.com/Cubey2019/vcoin/blob/master/docs/Beginner's-Guide.md
+[guide]: https://github.com/vertcoin-project/vcoin/blob/master/docs/Beginner's-Guide.md
 [freenode]: https://freenode.net/
 [irc]: irc://irc.freenode.net/bcoin
-[changelog]: https://github.com/Cubey2019/vcoin/blob/master/CHANGELOG.md
+[changelog]: https://github.com/vertcoin-project/vcoin/blob/master/CHANGELOG.md

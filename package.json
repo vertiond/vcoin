@@ -3,10 +3,10 @@
   "version": "1.0.0-beta.15",
   "description": "Vertcoin bike-shed",
   "license": "MIT",
-  "repository": "git://github.com/Cubey2019/vcoin.git",
-  "homepage": "https://github.com/Cubey2019/vcoin",
+  "repository": "git://github.com/vertcoin-project/vcoin.git",
+  "homepage": "https://github.com/vertcoin-project/vcoin",
   "bugs": {
-    "url": "https://github.com/Cubey2019/vcoin/issues"
+    "url": "https://github.com/vertcoin-project/vcoin/issues"
   },
   "author": "Fedor Indutny <fedor@indutny.com>",
   "contributors": [
