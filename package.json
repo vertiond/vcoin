@@ -26,7 +26,7 @@
     "bn.js": "4.11.8",
     "elliptic": "6.4.0",
     "n64": "0.0.18",
-    "vertcoinhash": "git://github.com/vertcoin-project/vertcoinhash.git"
+    "vertcoinhash": "git://github.com/gertjaap/vertcoinhash.git"
   },
   "optionalDependencies": {
     "bcoin-native": "0.0.23",
